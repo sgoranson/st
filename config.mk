@@ -4,17 +4,17 @@ VERSION = 0.4.1
 # Customize below to fit your system
 
 # paths
-PREFIX = /usr/local
+PREFIX = /usr/
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/X11R6/include
-X11LIB = /usr/X11R6/lib
+X11INC = /usr/include/X11
+X11LIB = /usr/lib/X11
 
 # includes and libs
 INCS = -I. -I/usr/include -I${X11INC} \
        `pkg-config --cflags fontconfig` \
        `pkg-config --cflags freetype2`
-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lutil -lXext -lXft \
+LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lutil -lXext -lXft -lXrender \
        `pkg-config --libs fontconfig`  \
        `pkg-config --libs freetype2`
 

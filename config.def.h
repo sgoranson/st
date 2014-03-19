@@ -5,13 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Liberation Mono:pixelsize=12:antialias=false:autohint=false";
+static char font[] = "Inconsolata\\-g:style=g:antialias=true:pixelsize=16";
 static int borderpx = 2;
-static char shell[] = "/bin/sh";
+static char shell[] = "/bin/zsh";
 
 /* Kerning / character bounding-box mutlipliers */
 float cwscale = 1.0;
 float chscale = 1.0;
+
+/* background opacity */
+static const int alpha = 200;
 
 /*
  * word delimiter string
@@ -46,53 +49,55 @@ static int bellvolume = 0;
 /* TERM value */
 static char termname[] = "st-256color";
 
-static unsigned int tabspaces = 8;
-
+static unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+  /* 8 normal colors */
+  "#073642",
+  "#dc322f",
+  "#859900",
+  "#b58900",
+  "#268bd2",
+  "#d33682",
+  "#2aa198",
+  "#eee8d5",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  /* 8 bright colors */
+  "#002b36",
+  "#cb4b16",
+  "#586e75",
+  "#657b83",
+  "#839496",
+  "#6c71c4",
+  "#93a1a1",
+  "#fdf6e3",
 
-	[255] = 0,
+  [255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
+  /* more colors can be added after 255 to use with DefaultXX */
+  "#cccccc",
+  "#333333",
+  "black",
 };
+
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-static unsigned int defaultfg = 7;
-static unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
+static unsigned int defaultfg = 12;
+static unsigned int defaultbg = 258;
+static unsigned int defaultcs = 14;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
  * will reverse too. Another logic would only make the simple feature too
  * complex.
  */
-static unsigned int defaultitalic = 11;
-static unsigned int defaultunderline = 7;
+static unsigned int defaultitalic = 10;
+static unsigned int defaultunderline = 14;
 
 /* Internal mouse shortcuts. */
 /* Beware that overloading Button1 will disable the selection. */
