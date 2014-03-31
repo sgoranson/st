@@ -14,7 +14,7 @@ float cwscale = 1.0;
 float chscale = 1.0;
 
 /* background opacity */
-static const int alpha = 200;
+static const int alpha = 230;
 
 /*
  * word delimiter string
